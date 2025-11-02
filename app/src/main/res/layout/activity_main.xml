@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnRequestProjection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Request Screen Capture Permission" />
+
+        <Button
+            android:id="@+id/btnStartOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Start Overlay Service" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Status: Idle"
+            android:paddingTop="8dp"/>
+
+        <View android:layout_height="12dp" android:layout_width="match_parent"/>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="HSV Thresholds (Hue Min, Hue Max, Sat Min, Val Min)"/>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+            <EditText android:id="@+id/etHueMin" android:layout_width="0dp" android:layout_weight="1" android:inputType="number" android:hint="HueMin" />
+            <EditText android:id="@+id/etHueMax" android:layout_width="0dp" android:layout_weight="1" android:inputType="number" android:hint="HueMax" />
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+            <EditText android:id="@+id/etSatMin" android:layout_width="0dp" android:layout_weight="1" android:inputType="number" android:hint="SatMin" />
+            <EditText android:id="@+id/etValMin" android:layout_width="0dp" android:layout_weight="1" android:inputType="number" android:hint="ValMin" />
+        </LinearLayout>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Sampling step (px)" />
+        <EditText android:id="@+id/etStep" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="number" android:hint="6" />
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Processing downscale (e.g., 4)" />
+        <EditText android:id="@+id/etScale" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="number" android:hint="4" />
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="ROI (left,top,right,bottom) - optional" />
+        <EditText android:id="@+id/etROI" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="0,0,0,0" />
+
+        <Button android:id="@+id/btnSaveSettings" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Save Settings" />
+
+        <View android:layout_height="12dp" android:layout_width="match_parent"/>
+
+        <Button android:id="@+id/btnSelectROI" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Interactive ROI: Drag on screen" />
+
+        <Button android:id="@+id/btnToggleDebug" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Toggle Debug Overlay" />
+
+        <TextView android:id="@+id/tvHints" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Hints: Use Hue range 40-90 for greens. Increase Sat/Val to avoid dark noise." android:paddingTop="8dp"/>
+
+    </LinearLayout>
+</ScrollView>
